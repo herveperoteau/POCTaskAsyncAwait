@@ -7,11 +7,16 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Codable, Identifiable {
    let gender: String
    let name: UserName
    let email: String
    let picture: UserPictures
+   let login: UserLogin
+
+   var id: String {
+      login.uuid
+   }
 }
 
 struct UserName: Codable {
@@ -24,4 +29,8 @@ struct UserPictures: Codable {
    let large: String
    let medium: String
    let thumbnail: String
+}
+
+struct UserLogin: Codable {
+   let uuid: String
 }

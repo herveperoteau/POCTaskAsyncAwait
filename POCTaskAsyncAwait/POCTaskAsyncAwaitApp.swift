@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct POCTaskAsyncAwaitApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+   var body: some Scene {
+      WindowGroup {
+         UsersListView()
+            .environmentObject(UsersListViewModel())
+      }
+   }
 }

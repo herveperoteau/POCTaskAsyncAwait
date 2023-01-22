@@ -34,7 +34,6 @@ struct RandomUsersClientApi {
             URLQueryItem(name: "results", value: "\(count)")
          ])
 
-      let request = URLRequest(url: url)
       let (data, _) = try await session.data(from: url)
       let decoder = JSONDecoder()
       let result = try decoder.decode(FetchUserResult.self, from: data)
