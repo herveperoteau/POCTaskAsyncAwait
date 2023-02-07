@@ -12,13 +12,20 @@ struct UsersListView: View {
    @EnvironmentObject var viewModel: UsersListViewModel
 
    var body: some View {
-      List(viewModel.users) { user in
-         HStack {
-            Text(user.name.title)
-            Text(user.name.first)
-            Text(user.name.last)
-         }
-      }
+       
+       VStack {
+           List(viewModel.users) { user in
+               HStack {
+                   Text(user.name.title)
+                   Text(user.name.first)
+                   Text(user.name.last)
+               }
+           }
+           
+           if viewModel.isLoading {
+               Text("Loading ...")
+           }
+       }
       .refreshable {
          viewModel.loadDatas()
       }

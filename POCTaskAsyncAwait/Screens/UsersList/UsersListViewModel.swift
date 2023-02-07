@@ -28,15 +28,18 @@ class UsersListViewModel: ObservableObject {
       }
    }
 
-   private func fetchUsers() async {
-      NSLog("loadDatas fetchUsers isMainThread: \(Thread.isMainThread)")
-      do {
-         let users = try await clientApi.fetchUsers(count: pageSize)
-         await addUsers(users)
-      } catch {
-         NSLog("Error: \(error) !!!")
-      }
-   }
+    private func fetchUsers() async {        
+        NSLog("loadDatas fetchUsers isMainThread: \(Thread.isMainThread)")
+        do {
+            // Fake  slow server
+            try await Task.sleep(nanoseconds: 2_000_000_000)
+            
+            let users = try await clientApi.fetchUsers(count: pageSize)
+            await addUsers(users)
+        } catch {
+            NSLog("Error: \(error) !!!")
+        }
+    }
 
    @MainActor
    private func setIsLoading(_ value: Bool) async {
