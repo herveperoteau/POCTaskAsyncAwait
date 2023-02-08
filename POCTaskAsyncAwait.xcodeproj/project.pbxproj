@@ -15,6 +15,8 @@
 		62E15256297C504E006ED080 /* POCTaskAsyncAwaitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E15255297C504E006ED080 /* POCTaskAsyncAwaitApp.swift */; };
 		62E1525A297C5051006ED080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E15259297C5051006ED080 /* Assets.xcassets */; };
 		62E1525D297C5051006ED080 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E1525C297C5051006ED080 /* Preview Assets.xcassets */; };
+		AD3D23592992B80900AEB213 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = AD3D23582992B80900AEB213 /* RxRelay */; };
+		AD3D235B2992B80900AEB213 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD3D235A2992B80900AEB213 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD3D235B2992B80900AEB213 /* RxSwift in Frameworks */,
+				AD3D23592992B80900AEB213 /* RxRelay in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +184,10 @@
 			dependencies = (
 			);
 			name = POCTaskAsyncAwait;
+			packageProductDependencies = (
+				AD3D23582992B80900AEB213 /* RxRelay */,
+				AD3D235A2992B80900AEB213 /* RxSwift */,
+			);
 			productName = POCTaskAsyncAwait;
 			productReference = 62E15252297C504E006ED080 /* POCTaskAsyncAwait.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 62E15249297C504E006ED080;
+			packageReferences = (
+				AD3D23572992B80900AEB213 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 62E15253297C504E006ED080 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -512,6 +523,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD3D23572992B80900AEB213 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD3D23582992B80900AEB213 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD3D23572992B80900AEB213 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		AD3D235A2992B80900AEB213 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD3D23572992B80900AEB213 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 62E1524A297C504E006ED080 /* Project object */;
 }

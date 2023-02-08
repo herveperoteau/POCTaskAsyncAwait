@@ -26,11 +26,13 @@ struct UsersListView: View {
                Text("Loading ...")
            }
        }
-      .refreshable {
-         viewModel.loadDatas()
-      }
+       .refreshable {
+           // viewModel.loadDatas()
+           viewModel.loadDatasRx()
+       }
       .onAppear {
-         viewModel.loadDatas()
+          //viewModel.loadDatas()
+          viewModel.loadDatasRx()
       }
    }
 }
